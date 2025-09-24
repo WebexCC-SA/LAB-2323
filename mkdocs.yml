@@ -89,7 +89,10 @@ nav:
       - Speakers: speakers.md
   - Lab:
       - Overview: overview.md
-      - Lab 1 - Getting Started: lab1_getting_started.md
+      - Lab 1 - Stock Reports: lab1_stock_reports.md
+      - Lab 2 - Building Dashboards: lab2_building_dashboards.md
+      - Lab 3 - Alerting: lab3_alerting.md
+      - Lab 4 - Machine Learning: lab4_machine_learning.md
       # - Conclusion: conclusion.md
   # - Topologies: topologies.md
   # - How to use this guide:
