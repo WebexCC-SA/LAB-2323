@@ -15,7 +15,6 @@ theme:
     - search.suggest
     - content.code.copy
     - toc.integrate
-  custom_dir: docs/overrides
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -59,7 +58,7 @@ plugins:
       zoomable: true
       draggable: false
       skip_classes:
-      - custom-skip-class-name
+        - custom-skip-class-name
       auto_caption: true
       caption_position: top
 markdown_extensions:
@@ -78,7 +77,7 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.tabbed:
       alternate_style: true
-      
+
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -91,15 +90,14 @@ nav:
   - Lab:
       - Overview: overview.md
       - Lab 1 - Getting Started: lab1_getting_started.md
-      - Conclusion: conclusion.md
-  - Topologies: topologies.md
-  - How to use this guide:
-      - Setting up and using the tool:
-        - Initial Setup: howToUse/initialSetup.md
-        - Using the tool after the initial setup: howToUse/postInitial.md
-        - Publishing your changes: howToUse/syncChanges.md
-      - Styling and Advanced Features:
-        - Markdown and Other References: howToUse/references.md
-        - Custom Features: howToUse/customFeatures.md
-        - Custom Admonitions: howToUse/admonition.md
- 
+      # - Conclusion: conclusion.md
+  # - Topologies: topologies.md
+  # - How to use this guide:
+  #     - Setting up and using the tool:
+  #       - Initial Setup: howToUse/initialSetup.md
+  #       - Using the tool after the initial setup: howToUse/postInitial.md
+  #       - Publishing your changes: howToUse/syncChanges.md
+  #     - Styling and Advanced Features:
+  #       - Markdown and Other References: howToUse/references.md
+  #       - Custom Features: howToUse/customFeatures.md
+  #       - Custom Admonitions: howToUse/admonition.md
