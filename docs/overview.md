@@ -2,19 +2,23 @@
 
 ## Learning Objectives
 
-This lab will give you an introduction to ...
 
-## Disclaimer
+## Lab Endpoints & Credentials
+- CUIC:
 
-Although the lab design and configuration examples could be used as a reference, for design related questions please contact your representative at Cisco, or a Cisco partner.
+| Key         | Value         |
+| ---------------- | ---------------- |
+| `URL`            | <copy>1.1.1.1</copy>        |
+| `Username`       | <copy>admin</copy>            |
+| `Password`       | <copy>C1sco123</copy>         |
 
-## Lab Access
+- Splunk: 
 
-From your workstation open an RDP (Remote Desktop) session to the following host named "wkst1":
-
-- IP: 1.2.3.4
-- Username: corp\demouser
-- Password: C1sco12345
+| Key         | Value         |
+| ---------------- | ---------------- |
+| `URL`            | <copy>1.1.1.1</copy>          |
+| `Username`       | <copy>admin</copy>            |
+| `Password`       | <copy>C1sco123</copy>         |
 
 ## Getting Started
 

@@ -85,7 +85,9 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
-  - Home: index.md
+  - Home:
+      - Introduction: introduction.md
+      - Speakers: speakers.md
   - Lab:
       - Overview: overview.md
       - Lab 1 - Getting Started: lab1_getting_started.md

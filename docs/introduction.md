@@ -1,0 +1,3 @@
+# Cisco Contact Center + Splunk: How to get Real-Time Data Insights
+
+This session focuses on how you can integrate Cisco Contact Centre Enterprise (CCE) with Splunk to gain powerful, real-time, and historical insights into your contact center operations. We'll guide participants through configuring CCE to ingest its reporting data into Splunk. Then, we'll demonstrate how to effectively visualize this data within Splunk, enabling the creation of reports that mirror and enhance standard CCE reporting. Attendees will gain a clear understanding of the CCE-Splunk integration architecture and methods for viewing CCE reports directly within the Splunk platform.
