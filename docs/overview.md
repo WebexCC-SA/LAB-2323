@@ -1,15 +1,16 @@
 # Overview
 
+## Learning Objectives
+
 ## Lab Prerequisites
 
 Before starting this lab, you'll need to download and install the required Splunk app package:
 
-**📦 Download Required Package:**
-[Download CCE Splunk Reports App (cce-splunk-reports-1.0.0-app.tar)](assets/cce-splunk-reports-1.0.0-app.tar){ .md-button .md-button--primary }
-
-!!! info "Installation Instructions" 1. Download the `cce-splunk-reports-1.0.0-app.tar` file using the link above 2. In your Splunk instance, go to **Apps** → **Manage Apps** 3. Click **Install app from file** 4. Upload the downloaded tar file 5. Restart Splunk when prompted
-
-## Learning Objectives
+!!! download
+    "Installation Instructions"<br />1. Download the `cce-splunk-reports-1.0.0-app.tar` file using the link below<br />2. In your Splunk instance, go to **Apps** → **Manage Apps**<br />3. Click **Install app from file**<br />4. Upload the downloaded tar file<br />5. Restart Splunk when prompted
+    <br />
+    <br />
+    **📦 [Download CCE Splunk Reports App (cce-splunk-reports-1.0.0-app.tar)](assets/cce-splunk-reports-1.0.0-app.tar)**
 
 ## Lab Endpoints & Credentials
 
