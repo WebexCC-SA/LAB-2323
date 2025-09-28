@@ -57,18 +57,17 @@ This exercise demonstrates how to build an operational dashboard using Dashboard
    - Enter
 
 ```spl
-index=cce_rt sourcetype=cce:rt:skill_group_real_time
-| stats latest(*) as * by SkillTargetID
-| where RouterCallsQNow > 0
-| join type=left SkillTargetID
-    [ search index=cce_config sourcetype=cce:config:skill_group earliest=1
-    | fields SkillTargetID EnterpriseName
-    | rename  EnterpriseName as SkillGroupName ]
-| eval QueuedCalls = RouterCallsQNow
-| eval LongestCallWaiting = now()-RouterLongestCallInQ/1000
-| table SkillGroupName QueuedCalls LongestCallWaiting
-| sort -QueuedCalls
-| rename SkillGroupName as "Skill Group", QueuedCalls as "Calls in Queue", LongestCallWaiting as "Longest Wait Time"
+index=cce_rt sourcetype="cce:rt:precision_q_real_time" 
+| stats latest(*) as * by PrecisionQueueID 
+| where CallsOfferedTo5 > 0
+| join type=left PrecisionQueueID
+    [ search index=cce_config sourcetype=cce:config:precision_queue earliest=1
+    | fields PrecisionQueueID EnterpriseName
+    | rename  EnterpriseName as PrecisionQueueName ]
+| eval CallsOffered = CallsOfferedTo5
+| eval AnswerWaitTime = AnswerWaitTimeTo5
+| table PrecisionQueueName CallsOffered AnswerWaitTime
+| rename PrecisionQueueName as "Precision Queue", CallsOffered as "Calls Offered", AnswerWaitTime as "Answer Wait Time(secs)" 
 ```
 
     - Under source coded section add refresh:30s in options
