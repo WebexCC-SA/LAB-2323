@@ -17,7 +17,7 @@ This exercise demonstrates how to leverage Splunk's Machine Learning Toolkit (ML
 1. **Install Splunk MLTK**
    - Navigate to **Apps** > **Find More Apps**
    - Search for "Splunk Machine Learning Toolkit"
-   - Install and restart Splunk
+   - Install and reload Splunk
 
 ---
 
