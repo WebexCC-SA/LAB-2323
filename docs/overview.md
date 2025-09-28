@@ -8,8 +8,30 @@ To access your lab session, please open the following URL:
       Click the link above to access your dedicated lab environment. This will open your lab session where you can follow along with the exercises.<br />
       **🔗 [Open Lab Session (click here)](https://expo.ciscodcloud.com/4rr9djtqlzsn487mky74y07iy)**
 
-## Lab Prerequisites
+1. Once you open the above link, you will redirected to the below screen. Click on Explore.
+      <figure markdown>
+        ![CUIC Login Screen](./assets/lab_overview_1.png){ width="800" }
+      </figure>
+- Enter your Email address and check the terms and condition to start the lab.
+      <figure markdown>
+        ![CUIC Login Screen](./assets/lab_overview_2.png){ width="800" }
+      </figure>
+- Open both Work Station 1 & 2, by clicking on the Remote Desktop links.
+      <figure markdown>
+        ![CUIC Login Screen](./assets/lab_overview_3.png){ width="800" }
+      </figure>
+- In Work Station 1, Start the "Start Call Simulator.bat" file.
+      <figure markdown>
+        ![CUIC Login Screen](./assets/lab_overview_4.png){ width="800" }
+      </figure>
+- Click okay on the pop-up and leave 'Work Station 1' alone as it simulates calls data on which we will perform later on.
+      <figure markdown>
+        ![CUIC Login Screen](./assets/lab_overview_5.png){ width="800" }
+      </figure>
 
+## Lab Prerequisites
+Come to **Workstation 2**
+<br />
 Before starting this lab, you'll need to download and install the required Splunk app package:
 
 !!! download
