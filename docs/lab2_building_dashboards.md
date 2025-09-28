@@ -25,8 +25,6 @@ This exercise demonstrates how to build an operational dashboard using Dashboard
    - Select **Grid**
    - Click **Create**
 
-**📸 Image Placeholder:**
-
 <figure markdown>
   ![Dashboard Studio Creation](./assets/create_dashboard.png){ width="800" }
   <figcaption>Screenshot showing Dashboard Studio creation interface</figcaption>

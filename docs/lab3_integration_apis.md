@@ -96,11 +96,6 @@ index=cce_rt sourcetype=cce:rt:agent_real_time
    - Monitor for the next few minutes
    - Verify the alerts are coming in by checking alerts in **Activity** > **Triggered Alerts**
 
-<figure markdown>
-  ![Alert Test Results](./assets/alert_test_results.png){ width="800" }
-  <figcaption>Screenshot showing alert test execution results</figcaption>
-</figure>
-
 ---
 
 ## Summary

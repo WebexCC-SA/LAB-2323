@@ -52,12 +52,22 @@ index="cce_demo"
 - Enter confidence interval as 95
 - Enter 672 as period
 
+<figure markdown>
+  ![Forecast Configuration](./assets/forecast_configuration.png){ width="800" }
+  <figcaption>Screenshot showing time series forecast configuration</figcaption>
+</figure>
+
 ### Step 4: Generate and Validate Forecast
 
 1. **Run Forecasting Model**
 
    - Click on **Forecast** Button
    - Observe forecasting results are shown as in image
+
+<figure markdown>
+  ![Forecast Results](./assets/forecast_results.png){ width="800" }
+  <figcaption>Screenshot showing forecast results visualization</figcaption>
+</figure>
 
 ### Step 5: Schedule Forecast Retraining
 
@@ -70,6 +80,11 @@ index="cce_demo"
    - Click on the **Schedule Report** and configure it to **Run Every Week** **Monday** **6:00**
    - Click Save
 
+<figure markdown>
+  ![Scheduled Training](./assets/scheduled_training.png){ width="800" }
+  <figcaption>Screenshot showing scheduled model retraining configuration</figcaption>
+</figure>
+
 ---
 
 ## Part B: Anomaly Detection for Call Patterns
@@ -80,6 +95,11 @@ index="cce_demo"
    - Navigate to **Machine Learning Toolkit** > **Experiments**
    - Click **Create New Experiment**
    - Choose **Detect Numeric Outliers** as experiment type and enter any experiment title
+
+<figure markdown>
+  ![Outlier Experiment Creation](./assets/outlier_experiment_creation.png){ width="800" }
+  <figcaption>Screenshot showing numeric outlier detection experiment creation</figcaption>
+</figure>
 
 ### Step 2: Configure Experiment Settings
 
@@ -95,12 +115,19 @@ index="cce_demo"
 | eval is_anomaly = if(CallsOffered > upper_bound AND CallsOffered > 50, 1, 0)
 ```
 
-and click on Search 2. **Configure Outlier Detection Parameters**
+and click on Search
+
+2. **Configure Outlier Detection Parameters**
 
 - Select **CallsOffered** as the field to analyze for outliers
 - Under **Threshold Method** select **Standard Deviation**
 - Set threshold multiplier to **2**
 - Select **SkillGroup** as the field to split by
+
+<figure markdown>
+  ![Outlier Detection Configuration](./assets/outlier_detection_config.png){ width="800" }
+  <figcaption>Screenshot showing numeric outlier detection configuration</figcaption>
+</figure>
 
 ### Step 3: Run Outlier Detection Analysis
 
@@ -108,6 +135,11 @@ and click on Search 2. **Configure Outlier Detection Parameters**
    - Click on **Detect Outliers** Button
    - Observe anomaly detection results showing skill groups with abnormal call patterns
    - Review the outlier scores and identified anomalies
+
+<figure markdown>
+  ![Outlier Detection Results](./assets/outlier_detection_results.png){ width="800" }
+  <figcaption>Screenshot showing outlier detection results visualization</figcaption>
+</figure>
 
 ### Step 4: Schedule Anomaly Detection Retraining
 
@@ -119,6 +151,11 @@ and click on Search 2. **Configure Outlier Detection Parameters**
    - In the next popup click on **Schedule**
    - Click on the **Schedule Report** and configure it to **Run Every Day** at **2:00 AM**
    - Click Save
+
+<figure markdown>
+  ![Scheduled Anomaly Detection](./assets/scheduled_anomaly_detection.png){ width="800" }
+  <figcaption>Screenshot showing scheduled anomaly detection retraining</figcaption>
+</figure>
 
 ---
 

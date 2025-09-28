@@ -26,8 +26,6 @@ This exercise demonstrates how Splunk is showing real time data and the existing
    - In the **Filter Modal** select teams 1000.AT and 1001.AT and click **>** icon
    - Click on **Run** Button
 
-**📸 Image Placeholder:**
-
 <figure markdown>
   ![CUIC Agent Real-time Report](./assets/cuic_agent_realtime_report.png){ width="800" }
   <figcaption>Screenshot showing CUIC agent real-time report interface</figcaption>
