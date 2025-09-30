@@ -24,22 +24,19 @@ This exercise demonstrates how to build an operational dashboard using Dashboard
    - Select **Dashboard Studio** (not Classic Dashboard)
    - Select **Grid**
    - Click **Create**
+   
 
 <figure markdown>
-  ![Dashboard Studio Creation](./assets/create_dashboard.png){ width="800" }
-  <figcaption>Screenshot showing Dashboard Studio creation interface</figcaption>
+  ![Dashboard Studio Creation](./assets/lab_2_1_db_6.png){ width="800" }
+  <figcaption>Screenshot showing Dashboard Studio Configuration</figcaption>
 </figure>
+
 
 ### Step 2: Configure Dashboard Settings
 
 1. **Set Dashboard Properties**
    - Navigate to **Edit** mode in Dashboard Studio
    - Set **Default Time Range**: Last 24 hours
-
-<figure markdown>
-  ![Dashboard Studio Settings](./assets/dashboard_studio_settings.png){ width="800" }
-  <figcaption>Screenshot of Dashboard Studio configuration settings</figcaption>
-</figure>
 
 ---
 
@@ -51,9 +48,26 @@ This exercise demonstrates how to build an operational dashboard using Dashboard
 
    - Click **+ Add Chart** in Dashboard Studio
    - Select **Bar Chart** from visualization types
+<figure markdown>
+  ![Dashboard Studio Creation](./assets/lab_2_1_db.png){ width="800" }
+  <figcaption>Screenshot showing Dashboard Studio Configuration</figcaption>
+</figure>
+<figure markdown>
+  ![Dashboard Studio Creation](./assets/lab_2_1_db_4.png){ width="800" }
+  <figcaption>Screenshot showing Dashboard Studio Configuration</figcaption>
+</figure>
 
 2. **Configure Data Source Query**
    - Under search in **Select data source** click on Create search link.
+
+<figure markdown>
+  ![Dashboard Studio Creation](./assets/lab_2_1_db_1.png){ width="800" }
+  <figcaption>Screenshot showing Dashboard Studio creation interface</figcaption>
+</figure>
+<figure markdown>
+  ![Dashboard Studio Creation](./assets/lab_2_1_db_5.png){ width="800" }
+  <figcaption>Screenshot showing Dashboard Studio Configuration</figcaption>
+</figure>
    - Enter
 
 ```spl
@@ -71,24 +85,28 @@ index=cce_rt sourcetype="cce:rt:precision_q_real_time"
 ```
 
     - Under source coded section add refresh:30s in options
-
 ```json
         "options": {
         "query": "index=cce_rt sourcetype=cce:rt:skill_group_real_time\n| stats latest(*) as * by SkillTargetID\n| where RouterCallsQNow > 0\n| join type=left SkillTargetID\n    [ search index=cce_config sourcetype=cce:config:skill_group earliest=1\n    | fields SkillTargetID EnterpriseName\n    | rename  EnterpriseName as SkillGroupName ]\n| eval QueuedCalls = RouterCallsQNow\n| eval LongestCallWaiting = now()-RouterLongestCallInQ/1000\n| table SkillGroupName QueuedCalls LongestCallWaiting\n| sort -QueuedCalls\n| rename SkillGroupName as \"Skill Group\", QueuedCalls as \"Calls in Queue\", LongestCallWaiting as \"Longest Wait Time\"",
         "refresh":"30s"
     },
 ```
+<figure markdown>
+  ![Dashboard Studio Creation](./assets/lab_2_1_db_8.png){ width="800" }
+  <figcaption>Screenshot showing Dashboard Studio Configuration</figcaption>
+</figure>
 
     - Click on Apply and close
     - Under Data Configuration Section Select
         - Select Skill Group for X
         - Calls in Queue and Longest Wait Time for Y
         - Longest Wait Time in Y2
-
 <figure markdown>
-  ![Bar Chart Query](./assets/column_chart_query.png){ width="800" }
-  <figcaption>Screenshot of bar chart data source configuration</figcaption>
+  ![Dashboard Studio Creation](./assets/lab_2_1_db_7.png){ width="800" }
+  <figcaption>Screenshot showing Dashboard Studio Configuration</figcaption>
 </figure>
+
+
 
 ---
 
