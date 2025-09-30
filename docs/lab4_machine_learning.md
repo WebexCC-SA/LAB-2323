@@ -14,25 +14,38 @@ This exercise demonstrates how to leverage Splunk's Machine Learning Toolkit (ML
 
 ## Prerequisites
 
-1. **Install Splunk MLTK**
-   - Navigate to **Apps** > **Find More Apps**
-   - Search for "Splunk Machine Learning Toolkit"
-   - Install and reload Splunk
+1. **Splunk AI Toolkit is Installed**
+   - For this exercise the App is already installed
 
 ---
 
 ## Part A: Build Call Forecasting Model Based on Historical Data
 
-### Step 2: Prepare Historical Data for Forecasting
 
-### Step 3: Build Time Series Forecasting Model
+### Step 1: Build Time Series Forecasting Model
 
 1. **Access MLTK Forecasting**
 
-   - Navigate to **Machine Learning Toolkit** app
-   - Click **Experiment** > **Forecast Time Series**
+   - Navigate to **AI Toolkit** app
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4a_ml_1.png){ width="800" }
+  <figcaption>Screenshot showing AI Toolkit App</figcaption>
+</figure>
+   - Click **Experiments** > **Forecast Time Series**
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4a_ml_2.png){ width="800" }
+  <figcaption>Screenshot showing opening Experiments tab</figcaption>
+</figure>
    - Click Create New Experiment
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4a_ml_3.png){ width="800" }
+  <figcaption>Screenshot showing Forecast Time Series</figcaption>
+</figure>
    - Select **Forecast Time Series** as experiment type and enter any experiment title
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4a_ml_4.png){ width="800" }
+  <figcaption>Screenshot showing Forecast Time Series</figcaption>
+</figure>
 
 2. **Configure Experiment Settings**
    - Enter SPL
@@ -45,44 +58,60 @@ index="cce_demo"
 | fillnull value=0
 ```
 
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4a_ml_5.png){ width="800" }
+  <figcaption>Screenshot showing Forecast Time Series SPL</figcaption>
+</figure>
+
 - Under Algorithm Select **Kalman Filter**
 - Select **TotalCallsOffered** in Field to forecast
 - Select **LLP5** as method
 - Enter 700 for **Future Timespan** and **Holdback**
 - Enter confidence interval as 95
 - Enter 672 as period
-
 <figure markdown>
-  ![Forecast Configuration](./assets/forecast_configuration.png){ width="800" }
-  <figcaption>Screenshot showing time series forecast configuration</figcaption>
+  ![Forecast Configuration](./assets/lab_4a_ml_6.png){ width="800" }
+  <figcaption>Screenshot showing Forecast Time Series Configuration</figcaption>
 </figure>
 
-### Step 4: Generate and Validate Forecast
+
+### Step 2: Generate and Validate Forecast
 
 1. **Run Forecasting Model**
 
    - Click on **Forecast** Button
    - Observe forecasting results are shown as in image
-
 <figure markdown>
-  ![Forecast Results](./assets/forecast_results.png){ width="800" }
-  <figcaption>Screenshot showing forecast results visualization</figcaption>
+  ![Forecast Configuration](./assets/lab_4a_ml_7.png){ width="800" }
+  <figcaption>Screenshot showing Forecast Time Series Graph</figcaption>
 </figure>
 
-### Step 5: Schedule Forecast Retraining
+### Step 3: Schedule Forecast Retraining
 
 1. **Schedule Configuration**
    - Click on **Open in Search** Buton
    - Ensure the SPL shows the parameter selected
    - Click on **Save As** Report
-   - Enter the title as "Scheduled Call Forecast Training"
-   - In the next popup click on **Schedule**
-   - Click on the **Schedule Report** and configure it to **Run Every Week** **Monday** **6:00**
-   - Click Save
-
 <figure markdown>
-  ![Scheduled Training](./assets/scheduled_training.png){ width="800" }
-  <figcaption>Screenshot showing scheduled model retraining configuration</figcaption>
+  ![Forecast Configuration](./assets/lab_4a_ml_8.png){ width="800" }
+  <figcaption>Screenshot showing Forecast Time Series Scheduling</figcaption>
+</figure>
+
+   - Enter the title as "Scheduled Call Forecast Training" and click Save
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4a_ml_9.png){ width="800" }
+  <figcaption>Screenshot showing Forecast Time Series Scheduling</figcaption>
+</figure>
+   - In the next popup click on **Schedule** and Click on View
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4a_ml_10.png){ width="800" }
+  <figcaption>Screenshot showing Forecast Time Series Scheduling</figcaption>
+</figure>
+   - Click on the **Schedule Report** and configure it to **Run Every Week** **Monday** **6:00**  
+   - Click Save
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4a_ml_11.png){ width="800" }
+  <figcaption>Screenshot showing Forecast Time Series Scheduling</figcaption>
 </figure>
 
 ---
@@ -91,14 +120,21 @@ index="cce_demo"
 
 ### Step 1: Configure Numeric Outlier Detection
 
-1. **Access MLTK Experiments**
-   - Navigate to **Machine Learning Toolkit** > **Experiments**
-   - Click **Create New Experiment**
-   - Choose **Detect Numeric Outliers** as experiment type and enter any experiment title
-
+1. **Access AI Experiments**
+   - Navigate to **AI Toolkit** > **Experiments**
 <figure markdown>
-  ![Outlier Experiment Creation](./assets/outlier_experiment_creation.png){ width="800" }
-  <figcaption>Screenshot showing numeric outlier detection experiment creation</figcaption>
+  ![Forecast Configuration](./assets/lab_4a_ml_2.png){ width="800" }
+  <figcaption>Screenshot showing opening Experiments tab</figcaption>
+</figure>
+   - Click **Create New Experiment**
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4b_ml_1.png){ width="800" }
+  <figcaption>Screenshot showing Creating new experiment</figcaption>
+</figure>
+   - Choose **Detect Numeric Outliers** as experiment type and enter any experiment title
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4b_ml_3.png){ width="800" }
+  <figcaption>Screenshot showing Creating new experiment</figcaption>
 </figure>
 
 ### Step 2: Configure Experiment Settings
@@ -114,19 +150,21 @@ index="cce_demo"
 | eval upper_bound = avg + (3 * stdev)
 | eval is_anomaly = if(CallsOffered > upper_bound AND CallsOffered > 50, 1, 0)
 ```
-
 and click on Search
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4b_ml_3.png){ width="800" }
+  <figcaption>Screenshot showing Outlier Detection SPL</figcaption>
+</figure>
 
 2. **Configure Outlier Detection Parameters**
 
 - Select **CallsOffered** as the field to analyze for outliers
 - Under **Threshold Method** select **Standard Deviation**
-- Set threshold multiplier to **2**
+- Set threshold multiplier to **3**
 - Select **SkillGroup** as the field to split by
-
 <figure markdown>
-  ![Outlier Detection Configuration](./assets/outlier_detection_config.png){ width="800" }
-  <figcaption>Screenshot showing numeric outlier detection configuration</figcaption>
+  ![Forecast Configuration](./assets/lab_4b_ml_4.png){ width="800" }
+  <figcaption>Screenshot showing Outlier Detection Configuration</figcaption>
 </figure>
 
 ### Step 3: Run Outlier Detection Analysis
@@ -135,10 +173,9 @@ and click on Search
    - Click on **Detect Outliers** Button
    - Observe anomaly detection results showing skill groups with abnormal call patterns
    - Review the outlier scores and identified anomalies
-
 <figure markdown>
-  ![Outlier Detection Results](./assets/outlier_detection_results.png){ width="800" }
-  <figcaption>Screenshot showing outlier detection results visualization</figcaption>
+  ![Forecast Configuration](./assets/lab_4b_ml_5.png){ width="800" }
+  <figcaption>Screenshot showing Outlier Detection Graphs</figcaption>
 </figure>
 
 ### Step 4: Schedule Anomaly Detection Retraining
@@ -147,15 +184,28 @@ and click on Search
    - Click on **Open in Search** Button
    - Ensure the SPL shows the parameters selected in the experiment
    - Click on **Save As** Report
-   - Enter the title as "Scheduled Call Pattern Anomaly Detection"
-   - In the next popup click on **Schedule**
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4b_ml_6.png){ width="800" }
+  <figcaption>Screenshot showing Outlier Detection Report</figcaption>
+</figure>
+   - Enter the title as "Scheduled Call Pattern Anomaly Detection" and Click Save
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4b_ml_7.png){ width="800" }
+  <figcaption>Screenshot showing Outlier Detection Report</figcaption>
+</figure>
+   - In the next popup click on **Schedule** and View Button
+<figure markdown>
+  ![Forecast Configuration](./assets/lab_4b_ml_8.png){ width="800" }
+  <figcaption>Screenshot showing Outlier Detection Schedule</figcaption>
+</figure>
+
    - Click on the **Schedule Report** and configure it to **Run Every Day** at **2:00 AM**
    - Click Save
-
 <figure markdown>
-  ![Scheduled Anomaly Detection](./assets/scheduled_anomaly_detection.png){ width="800" }
-  <figcaption>Screenshot showing scheduled anomaly detection retraining</figcaption>
+  ![Forecast Configuration](./assets/lab_4b_ml_9.png){ width="800" }
+  <figcaption>Screenshot showing Outlier Detection Schedule</figcaption>
 </figure>
+
 
 ---
 
