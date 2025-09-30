@@ -6,7 +6,7 @@ To access your lab session, please open the following URL:
 
 !!! info "Lab Session | Workstation 1 Setup"
       Click the link above to access your dedicated lab environment. This will open your lab session where you can follow along with the exercises.<br />
-      **🔗 [Open Lab Session (click here)](https://expo.ciscodcloud.com/4rr9djtqlzsn487mky74y07iy)**
+      **🔗 [Open Lab Session (click here)](https://expo.ciscodcloud.com/4rr9djtqlzsn487mky74y07iy){:target="_blank"}**
 
 1. Once you open the above link, you will redirected to the below screen. Click on Explore.
       <figure markdown>

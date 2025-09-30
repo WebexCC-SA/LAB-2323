@@ -24,9 +24,9 @@ This exercise demonstrates how to leverage Splunk's Machine Learning Toolkit (ML
 
 ### Step 1: Build Time Series Forecasting Model
 
-1. **Access MLTK Forecasting**
+1. **Access AI Toolkit for Forecasting**
 
-   - Navigate to **AI Toolkit** app
+   - Navigate to **AI Toolkit** app, by clicking on the Apps dropdown
 <figure markdown>
   ![Forecast Configuration](./assets/lab_4a_ml_1.png){ width="800" }
   <figcaption>Screenshot showing AI Toolkit App</figcaption>
